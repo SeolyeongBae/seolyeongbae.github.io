@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import clsx from "clsx";
 
-import Sidebar from "./components/sidebar";
+import Sidebar from "./components/Common/sidebar";
 import Theme from "./theme-provider";
 import "./globals.css";
 

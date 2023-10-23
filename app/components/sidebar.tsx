@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import ThemeToggle from "./themeToggle";
 
 const navItems = {
   "/": {
@@ -18,10 +19,12 @@ const navItems = {
 
 export default function Sidebar() {
   let pathname = usePathname() || "/";
+  const darkModeToggle = () =>
+    document.documentElement.classList.toggle("dark");
 
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
+      <div className="lg:sticky lg:top-20 flex flex-row justify-between">
         <nav
           className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
           id="nav"
@@ -43,7 +46,7 @@ export default function Sidebar() {
                   <span className="relative py-1 px-2">
                     {name}
                     {path === pathname ? (
-                      <div className="absolute h-[1px] top-7 mx-2 inset-0 bg-neutral-200 dark:bg-neutral-800 z-[-1] dark:bg-gradient-to-r from-transparent to-neutral-900" />
+                      <div className="absolute h-[1px] top-7 mx-2 inset-0 bg-neutral-300 dark:bg-neutral-600 z-[-1] dark:bg-gradient-to-r from-transparent to-neutral-900" />
                     ) : null}
                   </span>
                 </Link>
@@ -51,6 +54,8 @@ export default function Sidebar() {
             })}
           </div>
         </nav>
+
+        <ThemeToggle />
       </div>
     </aside>
   );

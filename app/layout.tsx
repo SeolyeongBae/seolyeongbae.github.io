@@ -1,9 +1,27 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Sidebar from "./components/sidebar";
+import localFont from "next/font/local";
+import clsx from "clsx";
 
-const inter = Inter({ subsets: ["latin"] });
+import Sidebar from "./components/sidebar";
+import Theme from "./theme-provider";
+import "./globals.css";
+
+const pretendard = localFont({
+  src: [
+    {
+      path: "../public/fonts/Pretendard-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Pretendard-Medium.ttf",
+      weight: "600",
+      style: "bold",
+    },
+  ],
+  variable: "--font-pretendard",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -21,12 +39,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto ${inter.className}`}
+        className={clsx(
+          "antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto text-black bg-white dark:text-white dark:bg-[#111010]",
+          pretendard.variable
+        )}
       >
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Sidebar />
-          {children}
-        </main>
+        <Theme>
+          <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+            <Sidebar />
+            {children}
+          </main>
+        </Theme>
       </body>
     </html>
   );

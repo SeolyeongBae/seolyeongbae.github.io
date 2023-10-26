@@ -34,7 +34,7 @@ export default function Footer() {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl pb-8 pt-16 sm:pt-24 g:pt-32">
+      <div className="mx-auto max-w-7xl pt-16 sm:pt-24 g:pt-32">
         <div className="mt-8 border-t border-gray-900/10  dark:border-gray-100/30 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (

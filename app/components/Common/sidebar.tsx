@@ -19,8 +19,6 @@ const navItems = {
 
 export default function Sidebar() {
   let pathname = usePathname() || "/";
-  const darkModeToggle = () =>
-    document.documentElement.classList.toggle("dark");
 
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">

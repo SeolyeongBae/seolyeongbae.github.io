@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          "antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto text-black bg-white dark:text-white dark:bg-[#111010]",
+          "antialiased max-w-3xl mb-10 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto text-black bg-white dark:text-white dark:bg-[#111010]",
           pretendard.variable
         )}
       >

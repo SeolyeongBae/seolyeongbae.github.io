@@ -14,6 +14,7 @@ export default function ThemeToggle() {
   return (
     <div className="flex ml-3">
       <label className="relative cursor-pointer p-2">
+        {/* light icon*/}
         <svg
           className="dark:hidden pointer-events-none"
           width="16"
@@ -29,6 +30,7 @@ export default function ThemeToggle() {
             d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"
           />
         </svg>
+        {/* dark icon*/}
         <svg
           className="hidden dark:block pointer-events-none"
           width="16"

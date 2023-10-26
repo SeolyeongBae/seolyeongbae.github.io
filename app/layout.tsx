@@ -5,6 +5,7 @@ import clsx from "clsx";
 import Sidebar from "./components/Common/sidebar";
 import Theme from "./theme-provider";
 import "./globals.css";
+import Footer from "./components/Common/footer";
 
 const pretendard = localFont({
   src: [
@@ -48,6 +49,7 @@ export default function RootLayout({
           <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
             <Sidebar />
             {children}
+            <Footer />
           </main>
         </Theme>
       </body>

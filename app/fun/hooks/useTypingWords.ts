@@ -22,6 +22,7 @@ const useTypingWords = (completWords: string, delay: number) => {
       clearInterval(typingWords);
     };
   });
+
   return words;
 };
 

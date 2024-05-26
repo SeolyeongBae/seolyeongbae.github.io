@@ -20,10 +20,6 @@ function computeNumber(number: number) {
   return numbers;
 }
 
-function generatePeerClassName(number: number) {
-  return `peer-hover/btn${number}:bg-slate-300`;
-}
-
 /** 컴퓨터 턴, 3초 뒤 넘어감 */
 const ComputerTurn = ({ number, setNumber }: BRgameProps) => {
   useEffect(() => {
@@ -46,6 +42,18 @@ const ComputerTurn = ({ number, setNumber }: BRgameProps) => {
       <p className="bg-slate-100 bg-opacity-100 dark:bg-opacity-20 py-2 px-4 animate-typing cursor-pointer h-10">
         {words || " "}
       </p>
+
+      <div className="typing-animation">
+        {`My turn! : ${numbers}`.split("").map((char, index) => (
+          <span
+            key={index}
+            className="inline-block opacity-0 animate-typing"
+            style={{ animationDelay: `${index * delay}ms` }}
+          >
+            {char}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };

@@ -9,6 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        typing: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        typing: "typing 1s forwards",
+      },
       fontFamily: {
         sans: ["var(--font-pretendard)"],
       },

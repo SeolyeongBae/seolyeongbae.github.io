@@ -1,27 +1,19 @@
 import { useEffect, useState } from "react";
 
-const useTypingWords = (completWords: string, delay: number) => {
+const useTypingWords = (completeWords: string, delay: number) => {
   const [words, setWords] = useState("");
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const typingWords = setInterval(() => {
-      if (words.length === completWords.length) return;
+    if (count < completeWords.length) {
+      const typingInterval = setInterval(() => {
+        setWords((prevWords) => prevWords + completeWords[count]);
+        setCount((prevCount) => prevCount + 1);
+      }, delay);
 
-      setWords((prevWord) => {
-        let nextWord = prevWord
-          ? prevWord + completWords[count]
-          : completWords[0];
-        setCount(count + 1);
-
-        return nextWord;
-      });
-    }, delay);
-
-    return () => {
-      clearInterval(typingWords);
-    };
-  });
+      return () => clearInterval(typingInterval);
+    }
+  }, [count, completeWords, delay]);
 
   return words;
 };

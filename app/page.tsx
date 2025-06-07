@@ -7,17 +7,19 @@ export default async function Page() {
 
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I am a junior software engineer specializing in web front-end
-          development. My interests are data visualization and user experience
-          design. I am majoring in Electrical Engineering and Computer Science
-          at GIST.
+          I am a junior software engineer specializing in front-end web
+          development, currently working at{" "}
+          <a className="underline" href="https://www.navercorp.com/">
+            NAVER
+          </a>
+          .
         </p>
       </div>
 
       <div className="flex flex-row mt-2">
         <EnvelopeIcon width={24} height={24} />
         <div className="ms-2 opacity-60 hover:opacity-100 transition-all">
-          seolyeongbae[at]gm.gist.ac.kr
+          peixueying[at]gmail[dot]com
         </div>
       </div>
     </section>
